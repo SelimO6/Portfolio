@@ -31,8 +31,8 @@
             Étudiant en <strong>2ème année de BUT Réseaux & Télécommunications</strong> à Sophia Antipolis, je suis passionné par les infrastructures réseau, la virtualisation et le développement web. Je cherche à mettre mes compétences en pratique dans le cadre d'un <strong>stage en deuxième année et d'une alternance en 3ème année</strong>.
         </p>
         <div class="cta-row fade-up fade-up-5">
-            <a href="#contact" class="btn btn-primary">→ Contactez-moi</a>
-            <a href="#projets" class="btn btn-outline">Voir mes projets</a>
+            <a href="#projets" class="btn btn-primary">→ Voir mes projets</a>
+            <a href="CV.pdf" class="btn btn-outline" download="CV-Selim-Bennour-Hamza.pdf">↓ Télécharger mon CV</a>
         </div>
     </header>
 
@@ -80,13 +80,23 @@
     <section id="projets">
         <div class="section-label">02</div>
         <h2 class="section-title">Projets</h2>
+        <p class="section-hint">Clique sur une fiche pour en savoir plus.</p>
         <div class="projets-grid">
 
-            <div class="project-card">
+            <article class="project-card" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Ouvrir la fiche : Simulation et administration d'un réseau local d'entreprise">
                 <div class="project-type">🔧 Projet technique</div>
                 <h3 class="project-name">Simulation et administration d'un réseau local d'entreprise</h3>
                 <p class="project-desc">Conception et configuration d'une infrastructure réseau complète pour une PME fictive avec segmentation par VLANs et mise en œuvre de services réseau.</p>
-                <div class="project-detail-row">
+                <div class="project-tech">
+                    <span class="tech-badge">Cisco Packet Tracer</span>
+                    <span class="tech-badge">VLANs</span>
+                    <span class="tech-badge">DHCP / DNS</span>
+                    <span class="tech-badge">ACL</span>
+                    <span class="tech-badge">Wireshark</span>
+                    <span class="tech-badge">Routage inter-VLAN</span>
+                </div>
+                <span class="project-more-hint">En savoir plus →</span>
+                <div class="project-more" hidden>
                     <div class="project-detail">
                         <span class="detail-label">Objectif</span>
                         <span class="detail-content">Concevoir et déployer une infrastructure réseau sécurisée pour une PME fictive, en répondant à un cahier des charges précis une première expérience concrète pour me préparer à un métier d'administrateur réseaux.</span>
@@ -104,21 +114,21 @@
                         <span class="detail-content">Ce projet m'a appris qu'un réseau ne se résume pas à brancher des câbles : chaque choix de configuration a des conséquences sur la sécurité et les performances. C'est ce qui m'a confirmé l'envie d'aller plus loin dans ce domaine.</span>
                     </div>
                 </div>
-                <div class="project-tech">
-                    <span class="tech-badge">Cisco Packet Tracer</span>
-                    <span class="tech-badge">VLANs</span>
-                    <span class="tech-badge">DHCP / DNS</span>
-                    <span class="tech-badge">ACL</span>
-                    <span class="tech-badge">Wireshark</span>
-                    <span class="tech-badge">Routage inter-VLAN</span>
-                </div>
-            </div>
+            </article>
 
-            <div class="project-card">
+            <article class="project-card" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Ouvrir la fiche : Interview d'un administrateur réseau en poste">
                 <div class="project-type">🎙️ Projet non technique – SAÉ 2.PORTFOLIO</div>
                 <h3 class="project-name">Interview d'un administrateur réseau en poste</h3>
                 <p class="project-desc">Pour préparer mon entrée en alternance en 3ème année de BUT R&T, j'ai pris l'initiative de rencontrer un administrateur réseau en activité afin de mieux cerner les exigences concrètes du poste et d'affiner mon orientation professionnelle.</p>
-                <div class="project-detail-row">
+                <div class="project-tech">
+                    <span class="tech-badge">Communication</span>
+                    <span class="tech-badge">Projet professionnel</span>
+                    <span class="tech-badge">Préparation entretien</span>
+                    <span class="tech-badge">Analyse métier</span>
+                    <span class="tech-badge">Rédaction synthèse</span>
+                </div>
+                <span class="project-more-hint">En savoir plus →</span>
+                <div class="project-more" hidden>
                     <div class="project-detail">
                         <span class="detail-label">Objectif</span>
                         <span class="detail-content">Découvrir concrètement le quotidien d'un administrateur réseau en entreprise, identifier les compétences clés attendues, et confirmer mon orientation vers ce métier en vue d'une alternance en 3ème année.</span>
@@ -132,16 +142,18 @@
                         <span class="detail-content">Ce qui m'a frappé, c'est la passion avec laquelle il parlait de son métier et l'ambition que ça demande pour évoluer.</span>
                     </div>
                 </div>
-                <div class="project-tech">
-                    <span class="tech-badge">Communication</span>
-                    <span class="tech-badge">Projet professionnel</span>
-                    <span class="tech-badge">Préparation entretien</span>
-                    <span class="tech-badge">Analyse métier</span>
-                    <span class="tech-badge">Rédaction synthèse</span>
-                </div>
-            </div>
+            </article>
 
         </div>
+
+        <dialog id="project-modal" aria-labelledby="modal-title">
+            <button type="button" class="modal-close" aria-label="Fermer la fiche">✕</button>
+            <div class="modal-type" id="modal-type"></div>
+            <h3 class="modal-title" id="modal-title"></h3>
+            <p class="modal-desc" id="modal-desc"></p>
+            <div class="modal-details" id="modal-details"></div>
+            <div class="project-tech" id="modal-tech"></div>
+        </dialog>
     </section>
 
     <section id="competences">
@@ -210,71 +222,64 @@
     <section id="experiences">
         <div class="section-label">04</div>
         <h2 class="section-title">Expériences</h2>
-        <div class="exp-grid">
-            <div>
-                <h3 class="experience-header-title">Expériences professionnelles</h3>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">Aout. 2026 – Maintenant</div>
-                        <div class="timeline-role">Vendeur</div>
-                        <div class="timeline-org">Bershka</div>
-                        <div class="timeline-desc">Conseil et orientation des clients en boutique, mise en rayon,réassort et mise en valeur des articles, encaissement et gestion de caisse.</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">Sept. 2025 – Aout. 2026</div>
-                        <div class="timeline-role">Équipier Polyvalent</div>
-                        <div class="timeline-org">Burger King</div>
-                        <div class="timeline-desc">Prise de commandes, service client, mise en place de la salle.</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">Été 2025</div>
-                        <div class="timeline-role">Agent de Chargement</div>
-                        <div class="timeline-org">AVIAvip</div>
-                        <div class="timeline-desc">Chargement/déchargement bagages, conduite d'engins de piste, respect des règles de sécurité aéroportuaire.</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">Toussaint 2024</div>
-                        <div class="timeline-role">Animateur Centre de Loisir</div>
-                        <div class="timeline-org">A.D.A.M (bénévole)</div>
-                        <div class="timeline-desc">Animation d'activités pour jeunes publics.</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">Été 2023</div>
-                        <div class="timeline-role">Équipier Polyvalent</div>
-                        <div class="timeline-org">Le 88 Bis</div>
-                        <div class="timeline-desc">Accueil clients, prise de commandes, encaissement, entretien.</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">Juin 2023</div>
-                        <div class="timeline-role">Volontaire</div>
-                        <div class="timeline-org">Service National Universel (SNU)</div>
-                        <div class="timeline-desc">Cohésion, engagement civique et esprit de service.</div>
-                    </div>
+        <div class="exp-group">
+            <h3 class="exp-group-title"><span aria-hidden="true">🧒</span> Animation</h3>
+            <div class="exp-cards">
+                <div class="exp-card">
+                    <div class="exp-date">Toussaint 2024</div>
+                    <div class="exp-role">Animateur Centre de Loisir</div>
+                    <div class="exp-org">A.D.A.M (bénévole)</div>
+                    <p class="exp-desc">Animation d'activités pour jeunes publics.</p>
                 </div>
             </div>
-            <div>
-                <h3 class="experience-header-title">Formation</h3>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">2025 – 2028</div>
-                        <div class="timeline-role">BUT Réseaux & Télécommunications</div>
-                        <div class="timeline-org">IUT Sophia Antipolis</div>
-                        <div class="timeline-desc">Administration réseaux, développement, virtualisation, gestion de projet.</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">2024 – 2025</div>
-                        <div class="timeline-role">Baccalauréat Technologique</div>
-                        <div class="timeline-org">Lycée Léonard de Vinci</div>
-                        <div class="timeline-desc">Diplôme obtenu, voie technologique.</div>
-                    </div>
+        </div>
+        <div class="exp-group">
+            <h3 class="exp-group-title"><span aria-hidden="true">📦</span> Manutention</h3>
+            <div class="exp-cards">
+                <div class="exp-card">
+                    <div class="exp-date">Été 2025</div>
+                    <div class="exp-role">Agent de Chargement</div>
+                    <div class="exp-org">AVIAvip</div>
+                    <p class="exp-desc">Chargement/déchargement bagages, conduite d'engins de piste, respect des règles de sécurité aéroportuaire.</p>
+                </div>
+            </div>
+        </div>
+        <div class="exp-group">
+            <h3 class="exp-group-title"><span aria-hidden="true">🛍️</span> Grande surface &amp; vente</h3>
+            <div class="exp-cards">
+                <div class="exp-card">
+                    <div class="exp-date">Aout. 2026 – Maintenant</div>
+                    <div class="exp-role">Vendeur</div>
+                    <div class="exp-org">Bershka</div>
+                    <p class="exp-desc">Conseil et orientation des clients en boutique, mise en rayon,réassort et mise en valeur des articles, encaissement et gestion de caisse.</p>
+                </div>
+            </div>
+        </div>
+        <div class="exp-group">
+            <h3 class="exp-group-title"><span aria-hidden="true">🍔</span> Restauration</h3>
+            <div class="exp-cards">
+                <div class="exp-card">
+                    <div class="exp-date">Sept. 2025 – Aout. 2026</div>
+                    <div class="exp-role">Équipier Polyvalent</div>
+                    <div class="exp-org">Burger King</div>
+                    <p class="exp-desc">Prise de commandes, service client, mise en place de la salle.</p>
+                </div>
+                <div class="exp-card">
+                    <div class="exp-date">Été 2023</div>
+                    <div class="exp-role">Équipier Polyvalent</div>
+                    <div class="exp-org">Le 88 Bis</div>
+                    <p class="exp-desc">Accueil clients, prise de commandes, encaissement, entretien.</p>
+                </div>
+            </div>
+        </div>
+        <div class="exp-group">
+            <h3 class="exp-group-title"><span aria-hidden="true">🤝</span> Engagement</h3>
+            <div class="exp-cards">
+                <div class="exp-card">
+                    <div class="exp-date">Juin 2023</div>
+                    <div class="exp-role">Volontaire</div>
+                    <div class="exp-org">Service National Universel (SNU)</div>
+                    <p class="exp-desc">Cohésion, engagement civique et esprit de service.</p>
                 </div>
             </div>
         </div>
@@ -321,6 +326,34 @@
     <footer>
         <p>2025–2026 Bennour Hamza Selim · BUT R&T · Sophia Antipolis</p>
     </footer>
+
+    <script>
+        (function () {
+            var modal = document.getElementById('project-modal');
+            if (!modal || typeof modal.showModal !== 'function') return;
+            var cards = document.querySelectorAll('.project-card');
+
+            function openCard(card) {
+                document.getElementById('modal-type').textContent = card.querySelector('.project-type').textContent;
+                document.getElementById('modal-title').textContent = card.querySelector('.project-name').textContent;
+                document.getElementById('modal-desc').textContent = card.querySelector('.project-desc').textContent;
+                var details = document.getElementById('modal-details');
+                details.innerHTML = card.querySelector('.project-more').innerHTML;
+                document.getElementById('modal-tech').innerHTML = card.querySelector('.project-tech').innerHTML;
+                modal.showModal();
+            }
+
+            cards.forEach(function (card) {
+                card.addEventListener('click', function () { openCard(card); });
+                card.addEventListener('keydown', function (e) {
+                    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openCard(card); }
+                });
+            });
+
+            modal.querySelector('.modal-close').addEventListener('click', function () { modal.close(); });
+            modal.addEventListener('click', function (e) { if (e.target === modal) modal.close(); });
+        })();
+    </script>
 
 </body>
 </html>

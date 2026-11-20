@@ -272,6 +272,8 @@ section {
 
 .btn:hover::before { transform: scaleX(1); }
 
+.btn-small { padding: 0.65rem 1.4rem; font-size: 0.75rem; margin-top: 0.2rem; }
+
 .btn-primary {
     background: var(--red);
     color: #fff;
@@ -792,8 +794,6 @@ body:has(#project-modal[open]) { overflow: hidden; }
 }
 
 .contact-value a:hover { border-bottom-color: var(--ocean-light); }
-
-.contact-cv { margin-top: 2.5rem; }
 
 .contact-intro-text {
     color: var(--muted);

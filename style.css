@@ -703,48 +703,18 @@ body:has(#project-modal[open]) { overflow: hidden; }
     flex-shrink: 0;
 }
 
-/* ── EXPÉRIENCES : cartes par domaine ── */
-.exp-columns {
-    columns: 2;
-    column-gap: 2.5rem;
-}
-
-.exp-group {
-    break-inside: avoid;
-    margin-bottom: 1.6rem;
-}
-
-.exp-group-title {
-    font-family: var(--mono);
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--red-bright);
-    margin-bottom: 0.7rem;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-}
-
-.exp-group-title::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: linear-gradient(90deg, var(--border-red), transparent);
-}
-
+/* ── EXPÉRIENCES : cartes côte à côte ── */
 .exp-cards {
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.1rem;
 }
 
 .exp-card {
     background: var(--navy-card);
     border: 1px solid var(--border);
     border-radius: 4px;
-    padding: 0.85rem 1.1rem 0.85rem 1.25rem;
+    padding: 1.1rem 1.25rem 1.2rem;
     position: relative;
     overflow: hidden;
     transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
@@ -753,29 +723,39 @@ body:has(#project-modal[open]) { overflow: hidden; }
 .exp-card::before {
     content: '';
     position: absolute;
-    top: 0; left: 0;
-    width: 3px; height: 100%;
-    background: linear-gradient(180deg, var(--red), var(--gold));
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--red), var(--gold));
     opacity: 0.7;
 }
 
 .exp-card:hover {
     border-color: var(--border-red);
-    transform: translateX(4px);
-    box-shadow: 0 8px 22px rgba(0,0,0,0.35);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.35);
 }
 
-.exp-head {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 1rem;
-    margin-bottom: 0.35rem;
+.exp-tag {
+    font-family: var(--mono);
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--red-bright);
+    margin-bottom: 0.7rem;
+}
+
+.exp-date {
+    font-family: var(--mono);
+    font-size: 0.66rem;
+    color: var(--ocean-light);
+    letter-spacing: 0.5px;
+    margin: 0.55rem 0 0.6rem;
 }
 
 .exp-role {
     font-family: var(--display);
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     letter-spacing: 1px;
     color: var(--white);
     line-height: 1.2;
@@ -786,19 +766,10 @@ body:has(#project-modal[open]) { overflow: hidden; }
     color: var(--gold);
 }
 
-.exp-date {
-    font-family: var(--mono);
-    font-size: 0.66rem;
-    color: var(--ocean-light);
-    letter-spacing: 0.5px;
-    text-align: right;
-    flex-shrink: 0;
-}
-
 .exp-desc {
     color: var(--muted);
     font-size: 0.82rem;
-    line-height: 1.55;
+    line-height: 1.6;
 }
 
 #contact {
@@ -954,9 +925,11 @@ footer::before {
 
     .apropos-grid, .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
     .projets-grid, .skills-grid { grid-template-columns: 1fr; }
-    .exp-columns { columns: 1; }
-    .exp-head { flex-direction: column; gap: 0.2rem; }
-    .exp-date { text-align: left; }
+    .exp-cards { grid-template-columns: 1fr; }
     #project-modal { padding: 1.5rem; }
     .cta-row .btn { width: 100%; text-align: center; }
+}
+
+@media (max-width: 960px) and (min-width: 769px) {
+    .exp-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }

@@ -906,10 +906,35 @@ footer {
 }
 
 footer::before {
-    content: '⚓ ';
+    content: '⚓';
+    display: block;
+    margin-bottom: 0.9rem;
     color: var(--gold);
     opacity: 0.6;
 }
+
+.footer-contact {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem 2rem;
+    margin-bottom: 1.2rem;
+    font-size: 0.8rem;
+}
+
+.footer-contact a {
+    color: var(--ocean-light);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.footer-contact a:hover {
+    color: #fff;
+    border-bottom-color: var(--red-bright);
+}
+
+.footer-contact span { color: var(--white); }
 
 
 @keyframes fadeUp {
